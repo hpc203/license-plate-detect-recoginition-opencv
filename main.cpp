@@ -277,7 +277,7 @@ void detect_plate_recognition::detect_rec(Mat& srcimg)
 		points_src[3] = Point2f((points.right_bottom.x - left)*ratiow, (points.right_bottom.y - top)*ratioh);
 		Mat plate_roi = this->crop_plate(points_src, srcimg, xmin, ymin, xmax, ymax);
 		string plate_number = LPR.rec(plate_roi);
-		//cout << plate_number << endl;
+		cout << plate_number << endl;
 
 		rectangle(srcimg, Point(xmin, ymin), Point(xmax, ymax), Scalar(0, 0, 255), 3);
 		/*string label = format("%.2f", confidences[idx]);
